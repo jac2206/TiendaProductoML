@@ -9,11 +9,6 @@ const routes: Routes = [
       (m) => m.AdministradorProductosModule
       ),
   },
-  {
-    path: '',
-    pathMatch: 'full',
-    redirectTo: ''
-  }
 ];
 
 @NgModule({

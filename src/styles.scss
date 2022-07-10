@@ -1,1 +1,186 @@
 /* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+
+// Background colors
+$headerBackgroundColor: #FFE600;
+$bodyBackgroundColor: #EEEEEE;
+$containerBackgroundColor: #fff;
+// Font colors
+$primaryColor: #333333;
+$secondaryColor: #666666;
+$inputPlaceholderColor: #999999;
+// Font sizes
+$fontSize1: 12px;
+$fontSize2: 14px;
+$fontSize3: 16px;
+$fontSize4: 18px;
+$fontSize5: 24px;
+$fontSize6: 26px;
+$fontSize7: 28px;
+$fontSize8: 46px;
+// Margin / Padding sizes
+$marginPaddingSize1: 16px;
+$marginPaddingSize2: 32px;
+// Others
+$thumbnailSize: 180px;
+$pictureSize: 680px;
+
+header {
+    background-color: $headerBackgroundColor;
+}
+
+body {
+    background-color: $bodyBackgroundColor;
+    color: $primaryColor;
+    min-width: 300px;
+}
+
+.ml-container {
+    background-color: $containerBackgroundColor;
+    border-radius: 4px;
+    margin: 0 0 $marginPaddingSize2 0;
+}
+
+.ml-search-icon {
+    background: url('/assets/images/ic_Search.png') no-repeat;
+    width: 18px;
+    height: 18px;
+    display: inline-block;
+}
+
+.ml-shipping-icon {
+    background: url('/assets/images/ic_shipping.png') no-repeat;
+    width: 18px;
+    height: 18px;
+    display: inline-block;
+}
+
+.ml-btn-primary {
+    width: 100%;
+}
+
+app-barra-busqueda {
+    a.ml-logo {
+        background: url('/assets/images/Logo_ML.png') no-repeat;
+        width: 53px;
+        height: 36px;
+        display: inline-block;
+    }
+    input.ml-search-input {
+        font-size: $fontSize4;
+        /* Chrome, Safari, Opera and Edge */
+        &::-webkit-input-placeholder { color: $inputPlaceholderColor; }
+        /* Firefox 4 through 18 */
+        &:-moz-input-placeholder { color: $inputPlaceholderColor; }
+        /* Firefox 19+ */
+        &::-moz-input-placeholder { color: $inputPlaceholderColor; }
+        /* IE10 and IE11 */
+        &:-ms-input-placeholder { color: $inputPlaceholderColor; }
+    };
+    .ml-search-button {
+        cursor: pointer;
+    }
+}
+
+app-bread-crumb {
+    margin: 0 0 $marginPaddingSize1 0;
+    .ml-breadcrumb {
+        color: $secondaryColor;
+        font-size: $fontSize2;
+        padding: $marginPaddingSize1 0 0 0;
+        a {
+            color: inherit;
+        }
+    }
+}
+
+app-item-list {
+    .ml-item-card {
+        padding: $marginPaddingSize1;
+        border-bottom: 1px solid $bodyBackgroundColor;
+        .ml-item-thumbnail {
+            width: $thumbnailSize;
+            min-width: $thumbnailSize;
+            max-width: $thumbnailSize;
+            height: $thumbnailSize;
+            min-height: $thumbnailSize;
+            max-height: $thumbnailSize;
+            border-radius: 4px;
+            @media (min-width: 576px) {
+                float:  left !important;
+                margin: 0 $marginPaddingSize1 0 0;
+            }
+            @media (max-width: 575px) {
+                display: block;
+                margin: auto;
+            }
+        }
+        .ml-item-price {
+            line-height: $fontSize5;
+            font-size: $fontSize5;
+            white-space: nowrap;
+        }
+        .ml-item-location {
+            line-height: $fontSize5;
+            color: $secondaryColor;
+            font-size: $fontSize1;
+        }
+        .ml-item-title {
+            font-size: $fontSize4;
+            padding: $marginPaddingSize2 0 0 0;
+            white-space: pre-wrap;
+            a {
+                color: inherit;
+            }
+        }
+    }
+}
+
+app-item-details {
+    .ml-item-card {
+        padding: $marginPaddingSize2;
+        .ml-item-picture {
+            display: inline-block;
+            width: $pictureSize;
+            vertical-align: top;
+            @media(max-width: calc(#{$pictureSize} + #{$marginPaddingSize2} + #{$marginPaddingSize2} + 330px)) {
+                display: block;
+                margin: auto;
+            }
+            @media(max-width: calc(#{$pictureSize} + #{$marginPaddingSize2} + #{$marginPaddingSize2} + 180px)) {
+                width: 100%;
+            }
+        }
+        .ml-item-summary {
+            display: inline-block;
+            width: calc(100% - #{$pictureSize});
+            @media(max-width: calc(#{$pictureSize} + #{$marginPaddingSize2} + #{$marginPaddingSize2} + 330px)) {
+                display: block;
+                width: 100%;
+            }
+        }
+        .ml-item-status {
+            font-size: $fontSize2;
+            padding: 0 0 $marginPaddingSize1 0;
+        }
+        .ml-item-name {
+            font-size: $fontSize5;
+            font-weight: bold;
+            padding: 0 0 $marginPaddingSize2 0;
+        }
+        .ml-item-price {
+            font-size: $fontSize8;
+            padding: 0 0 $marginPaddingSize2 0;
+        }
+        .ml-item-description {
+            .ml-title {
+                font-size: $fontSize7;
+                font-weight: bold;
+                padding: 0 0 $marginPaddingSize2 0;
+            }
+            font-size: $fontSize3;
+            padding: $marginPaddingSize2 0 0 0;
+            white-space: pre-wrap;
+        }
+    }
+}
