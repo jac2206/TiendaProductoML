@@ -5,27 +5,49 @@ import { DetalleProductosComponent } from './ui/components/detalle-productos/det
 import { ListaProductosComponent } from './ui/components/lista-productos/lista-productos.component';
 import { HomeProductosContainerComponent } from './ui/containers/home-productos-container/home-productos-container.component';
 
+// const routes: Routes = [
+//   {
+//     path: '',
+//     pathMatch: 'full',
+//     component: HomeProductosContainerComponent
+//   },
+//   {
+//     path: 'items',
+//     children: [
+//       {
+//         path: '',
+//         pathMatch: 'full',
+//         component: ListaProductosComponent
+//       },
+//       {
+//         path: '',
+//         pathMatch: 'full',
+//         component: DetalleProductosComponent
+//       },
+//     ]
+//   }
+// ];
+
 const routes: Routes = [
   {
     path: '',
-    pathMatch: 'full',
-    component: HomeProductosContainerComponent
-  },
-  {
-    path: 'items',
+    component: HomeProductosContainerComponent,
     children: [
       {
-        path: '',
-        pathMatch: 'full',
-        component: ListaProductosComponent
-      },
-      {
-        path: '',
-        pathMatch: 'full',
-        component: DetalleProductosComponent
-      },
+        path: 'items',
+        children: [
+          {
+            path: '',
+            component: ListaProductosComponent
+          },
+          {
+            path: ':id',
+            component: DetalleProductosComponent
+          },
+        ]
+      }
     ]
-  }
+  },
 ];
 
 @NgModule({

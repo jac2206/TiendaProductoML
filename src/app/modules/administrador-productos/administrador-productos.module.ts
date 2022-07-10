@@ -7,6 +7,10 @@ import { BarraBusquedaComponent } from './ui/components/barra-busqueda/barra-bus
 import { ListaProductosComponent } from './ui/components/lista-productos/lista-productos.component';
 import { DetalleProductosComponent } from './ui/components/detalle-productos/detalle-productos.component';
 import { BreadCrumbComponent } from './ui/components/bread-crumb/bread-crumb.component';
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+
 
 
 @NgModule({
@@ -19,7 +23,10 @@ import { BreadCrumbComponent } from './ui/components/bread-crumb/bread-crumb.com
   ],
   imports: [
     CommonModule,
-    AdministradorProductosRoutingModule
+    AdministradorProductosRoutingModule,
+    // BrowserModule,
+    FormsModule,
+    HttpClientModule
   ]
 })
 export class AdministradorProductosModule { }
