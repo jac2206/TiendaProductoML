@@ -94,7 +94,7 @@ app-bread-crumb {
     }
 }
 
-app-item-list {
+app-lista-productos {
     .ml-item-card {
         padding: $marginPaddingSize1;
         border-bottom: 1px solid $bodyBackgroundColor;
@@ -136,7 +136,7 @@ app-item-list {
     }
 }
 
-app-item-details {
+app-detalle-productos {
     .ml-item-card {
         padding: $marginPaddingSize2;
         .ml-item-picture {
