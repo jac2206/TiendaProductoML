@@ -1,25 +1,27 @@
-<div class="ml-container">
-  <div class="ml-item-card">
-    <div>
-        <img class="ml-item-picture pr-1" src="src/assets/images/Logo_ML.png" alt="Foto">
-        <div class="ml-item-summary">
-            <div class="ml-item-status">
-                 vendidos
-            </div>
-            <div class="ml-item-name">
-                titulo
-            </div>
-            <div class="ml-item-price">
-                600 pesos
-            </div>
-            <div>
-                <button type="button" class="btn btn-primary ml-btn-primary">Comprar</button>
+<app-bread-crumb [migaDePanCategorias]="categorias"></app-bread-crumb>
+<div *ngIf="producto" class="ml-container">
+    <div class="ml-item-card">
+        <div>
+            <img class="ml-item-picture pr-1" [src]="producto.picture" alt="Foto">
+            <div class="ml-item-summary">
+                <div class="ml-item-status">
+                    {{ (producto.condition === 'new' ? 'Nuevo' : 'Usado') }} - {{ producto.sold_quantity }} vendidos
+                </div>
+                <div class="ml-item-name">
+                    {{ producto.title }}
+                </div>
+                <div class="ml-item-price">
+                    {{ producto.price.currency }} {{ producto.price.decimals | number }}
+                    <i [hidden]="!producto.free_shipping" class="ml-shipping-icon"></i>
+                </div>
+                <div class="pl-5">
+                    <button type="button" class="btn btn-primary ml-btn-primary" (click)="Comprar()">Comprar</button>
+                </div>
             </div>
         </div>
+        <div class="ml-item-description">
+            <div class="ml-title">Descripción del producto</div>
+            {{ producto.description }}
+        </div>
     </div>
-    <div class="ml-item-description">
-        <div class="ml-title">Descripción del producto</div>
-        fsdsdfs
-    </div>
-  </div>
 </div>
