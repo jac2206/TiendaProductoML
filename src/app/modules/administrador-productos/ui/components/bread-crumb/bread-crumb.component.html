@@ -1,1 +1,6 @@
-<p>bread-crumb works!</p>
+<div *ngIf="migaDePanCategorias" class="ml-breadcrumb">
+    <span *ngFor="let migaDePanCategoria of migaDePanCategorias; last as isLast">
+        <a [routerLink]="['/items']" [queryParams]="{ search: migaDePanCategoria }" routerLinkActive="active">{{ migaDePanCategoria }}</a>
+        <span class="mx-1" *ngIf="!isLast">></span>
+    </span>
+</div>

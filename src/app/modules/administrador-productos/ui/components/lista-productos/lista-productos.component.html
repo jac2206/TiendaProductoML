@@ -1,4 +1,29 @@
+<app-bread-crumb [migaDePanCategorias]="categorias"></app-bread-crumb>
+<div *ngIf="productos" class="ml-container">
+    <div *ngFor="let producto of productos" class="ml-item-card clearfix">
+        <a [routerLink]="['/items', producto.id]" routerLinkActive="active">
+            <img class="ml-item-thumbnail" [src]="producto.picture" alt="Foto">
+        </a>
+        <div class="row no-gutters">
+            <div class="col">
+                <span class="ml-item-price">
+                    {{ producto.price.currency }} {{ producto.price.decimals | number }}
+                    <i [hidden]="!producto.free_shipping" class="ml-shipping-icon"></i>
+                </span>
+            </div>
+            <div class="col-sm-4">
+                <span class="ml-item-location">{{ producto.location.city }} ({{ producto.location.state }})</span>
+            </div>
+        </div>
+        <div class="ml-item-title">
+            <a [routerLink]="['/items', producto.id]" routerLinkActive="active">
+                {{ producto.title }}
+            </a>
+        </div>
+    </div>
+</div>
 
+<!--
 <div class="ml-container">
   <div class="ml-item-card clearfix">
           <img class="ml-item-thumbnail" src="src\assets\images\Logo_ML.png" alt="Foto">
@@ -16,4 +41,4 @@
         <label>titulo</label>
       </div>
   </div>
-</div>
+</div> -->
