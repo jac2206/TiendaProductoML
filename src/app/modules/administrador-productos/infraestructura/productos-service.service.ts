@@ -14,14 +14,25 @@ export class ProductosServiceService {
   ) { }
 
   public BuscarProductos(search: string) {
-    return this.http.get<ListaProductosDTO>(`/api/items?q=${search}`)
+    return this.http.get<ListaProductosDTO>(`http://localhost:3000/api/items?q=${search}`)
         .pipe(map(listaProductos => listaProductos), catchError(this.HandleError));
   }
 
   public ObtenerDetalleProducto(id: string) {
-    return this.http.get<DetalleProductoDTO>(`/api/items/${id}`)
+    return this.http.get<DetalleProductoDTO>(`http://localhost:3000/api/items/${id}`)
         .pipe(map(detalleProducto => detalleProducto), catchError(this.HandleError));
   }
+
+  //con proxu\y
+  // public BuscarProductos(search: string) {
+  //   return this.http.get<ListaProductosDTO>(`/api/items?q=${search}`)
+  //       .pipe(map(listaProductos => listaProductos), catchError(this.HandleError));
+  // }
+
+  // public ObtenerDetalleProducto(id: string) {
+  //   return this.http.get<DetalleProductoDTO>(`/api/items/${id}`)
+  //       .pipe(map(detalleProducto => detalleProducto), catchError(this.HandleError));
+  // }
 
   private HandleError(res: HttpErrorResponse | any) {
     console.error(res);
