@@ -13,15 +13,27 @@ export class ProductosServiceService {
     private http: HttpClient
   ) { }
 
+  // public BuscarProductos(search: string) {
+  //   return this.http.get<ListaProductosDTO>(`http://localhost:3000/api/items?q=${search}`)
+  //       .pipe(map(listaProductos => listaProductos), catchError(this.HandleError));
+  // }
+
+  // public ObtenerDetalleProducto(id: string) {
+  //   return this.http.get<DetalleProductoDTO>(`http://localhost:3000/api/items/${id}`)
+  //       .pipe(map(detalleProducto => detalleProducto), catchError(this.HandleError));
+  // }
+
+  //Azure
   public BuscarProductos(search: string) {
-    return this.http.get<ListaProductosDTO>(`http://localhost:3000/api/items?q=${search}`)
+    return this.http.get<ListaProductosDTO>(`http://tiendaproductosmlapi.azurewebsites.net/api/items?q=${search}`)
         .pipe(map(listaProductos => listaProductos), catchError(this.HandleError));
   }
 
   public ObtenerDetalleProducto(id: string) {
-    return this.http.get<DetalleProductoDTO>(`http://localhost:3000/api/items/${id}`)
+    return this.http.get<DetalleProductoDTO>(`http://tiendaproductosmlapi.azurewebsites.net/api/items/${id}`)
         .pipe(map(detalleProducto => detalleProducto), catchError(this.HandleError));
   }
+
 
   //con proxu\y
   // public BuscarProductos(search: string) {
