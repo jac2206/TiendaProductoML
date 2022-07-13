@@ -1,27 +1,38 @@
 # TiendaProductosML
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.5.
+Apliación test para MELI donde se tiene un FRONT END en Angular y un backend en express para busqueda de productos y detalle de productos
 
-## Development server
+Autor: Julián Arango Correa
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Ejecutar front end local 
 
-## Code scaffolding
+Ejeutar de manera local (http://localhost:4200)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```
+DEV
+ng serve
+npm start
 
-## Build
+Para tomar la url de la api de produccion 
+npm run production 
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+```
 
-## Running unit tests
+## Ejecutar backend local
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Ejeutar de manera local (http://localhost:4200)
 
-## Running end-to-end tests
+```
+DEV
+npm start
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Con nodemon
+npm run dev 
 
-## Further help
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## URL Front end producción (https://thankful-beach-0d6a94810.1.azurestaticapps.net)
+
+## URL Back end producción (https://tiendaproductosml.azurewebsites.net)
+
+
