@@ -16,7 +16,6 @@ export class ProductosServiceService {
 
     //Azure
     public BuscarProductos(search: string) {
-      alert(environment.apiProductos)
       return this.http.get<ListaProductosDTO>(`${environment.apiProductos}/api/items?q=${search}`)
           .pipe(map(listaProductos => listaProductos), catchError(this.HandleError));
     }
