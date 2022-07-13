@@ -20,7 +20,7 @@ npm run production
 
 ## Ejecutar backend local
 
-Ejeutar de manera local (http://localhost:4200)
+Ejeutar de manera local (http://localhost:3000)
 
 ```
 DEV
