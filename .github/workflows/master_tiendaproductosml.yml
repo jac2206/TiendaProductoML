@@ -24,7 +24,7 @@ jobs:
       - name: npm install, build, and test
         run: |
           npm install
-          npm run build --if-present
+          npm run build --prod
       
       - name: Zip artifact for deployment
         run: zip release.zip ./* -r
@@ -58,4 +58,4 @@ jobs:
           app-name: 'tiendaproductosML'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_AB25AAAE4CB142B189C734E899154C52 }}
-          package: ./dist/tiendaproductosML
+          package: .
