@@ -4,6 +4,10 @@ Apliación test para MELI donde se tiene un FRONT END en Angular y un backend en
 
 Autor: Julián Arango Correa
 
+## Tablero actividades
+
+https://github.com/jac2206/TiendaProductoML/projects/1
+
 ## Ejecutar front end local 
 
 Ejeutar de manera local (http://localhost:4200)
