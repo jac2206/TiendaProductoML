@@ -47,17 +47,4 @@ export class ListaProductosComponent implements OnInit {
       }
     });
   }
-
-  ConsultarListaProductosDeprecado(search: string){
-    this.apiProductos.BuscarProductos(search).subscribe(listaProductos => {
-        console.log(listaProductos)
-        this.categorias = listaProductos.categories
-        this.productos = listaProductos.items;
-        console.log(this.categorias)
-        console.log(this.productos)
-    }, err => {
-        alert('Estamos con dificultades técnicas. Por favor intenta más tarde');
-    });
-  }
-
 }

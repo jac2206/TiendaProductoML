@@ -47,29 +47,7 @@ export class DetalleProductosComponent implements OnInit {
     });
   }
 
-  ConsultarDetalleProdutoDeprecado(id: string) {
-    this.apiDetalleProducto.ObtenerDetalleProducto(id).subscribe(detalleProducto => {
-      this.categorias = detalleProducto.categories;
-      this.producto = detalleProducto.item;
-    }, err => {
-      let errHandled = false;
-      if (err instanceof HttpErrorResponse) {
-        const httpErr = err as HttpErrorResponse;
-        if (httpErr.status === 404) {
-          errHandled = true;
-          this.router.navigate(['/']);
-          alert(`El producto ${id} no existe`);
-        }
-      }
-      if (!errHandled) {
-        alert('U Estamos con dificultades técnicas. Por favor intenta más tarde');
-      }
-    });
-  }
-
   Comprar() {
     alert('El producto se añadio a tu carrito');
   }
-
-
 }
