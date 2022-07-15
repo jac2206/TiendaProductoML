@@ -30,6 +30,9 @@ export class MensajeRespuestaEstadohttp {
     if (status === Statushttp.BAD_REQUEST) {
       return `Request obtenido mal`;
     }
+    if(status === Statushttp.FORBIDDEN){
+      return 'La api no se enuentra ejecutandose. Por favor comunicarse con TI'
+    }
     return 'Estamos con dificultades técnicas. Por favor intenta más tarde'
   }
 
