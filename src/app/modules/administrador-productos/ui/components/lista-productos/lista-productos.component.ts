@@ -1,8 +1,11 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { filter, map } from 'rxjs';
 import { ItemsDTO } from 'src/app/shared/common/entidades/items-dto';
 import { ProductosServiceService } from '../../../infraestructura/productos-service.service';
+import { Statushttp } from 'src/app/shared/common/enum/statushttp';
+import { MensajeRespuestaEstadohttp } from 'src/app/shared/common/util/mensajerespuestaestadohttp';
 
 @Component({
   selector: 'app-lista-productos',
@@ -17,7 +20,9 @@ export class ListaProductosComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private apiProductos: ProductosServiceService
+    private router: Router,
+    private apiProductos: ProductosServiceService,
+    private mensajesHttp: MensajeRespuestaEstadohttp
   ) { }
 
   ngOnInit(): void {
@@ -37,7 +42,8 @@ export class ListaProductosComponent implements OnInit {
         this.productos = listaProductos.items;
       },
       error:(err) => {
-        alert('Estamos con dificultades técnicas. Por favor intenta más tarde');
+        alert(this.mensajesHttp.ErrorConsularListaProductos(err));
+        this.router.navigate(['/']);
       }
     });
   }
