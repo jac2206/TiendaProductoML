@@ -1,6 +1,15 @@
 {
   "name": "tienda-productos-ml",
-  "version": "0.0.0",
+  "version": "0.0.1",
+  "description": "Aplicacion para buscar productos de MELI y mostrar detalles del producto",
+  "author": "Julián Arango Correa",
+  "license": "Free",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jac2206/TiendaProductoML"
+  },
+  "homepage": "https://github.com/jac2206/TiendaProductoML#readme",
+  "main": "index.js",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
