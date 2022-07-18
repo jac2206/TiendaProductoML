@@ -12,7 +12,7 @@
                 </div>
                 <div class="ml-item-price">
                     {{ producto.price.currency }} {{ producto.price.decimals | number }}
-                    <i [hidden]="!producto.free_shipping" class="ml-shipping-icon"></i>
+                    <em [hidden]="!producto.free_shipping" class="ml-shipping-icon"></em>
                 </div>
                 <div class="pl-5">
                     <button type="button" class="btn btn-primary ml-btn-primary" (click)="Comprar()">Comprar</button>

@@ -8,7 +8,7 @@
             <div class="col">
                 <span class="ml-item-price">
                     {{ producto.price.currency }} {{ producto.price.decimals | number }}
-                    <i [hidden]="!producto.free_shipping" class="ml-shipping-icon"></i>
+                    <em [hidden]="!producto.free_shipping" class="ml-shipping-icon"></em>
                 </span>
             </div>
             <div class="col-sm-4">
