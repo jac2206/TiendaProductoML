@@ -1,5 +1,5 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable, Output } from '@angular/core';
 import { catchError, map, throwError as observableThrowError } from 'rxjs';
 import { DetalleProductoDTO } from '../dominio/entidades/detalle-producto-dto';
 import { ListaProductosDTO } from '../dominio/entidades/lista-productos-dto';
@@ -9,6 +9,8 @@ import {environment} from '../../../../environments/environment'
   providedIn: 'root'
 })
 export class ProductosServiceService {
+
+  @Output() detallesEnCategorias: EventEmitter<any> = new EventEmitter();
 
   constructor(
     private http: HttpClient

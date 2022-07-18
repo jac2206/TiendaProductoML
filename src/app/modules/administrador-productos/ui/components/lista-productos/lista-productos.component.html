@@ -1,4 +1,4 @@
-<app-bread-crumb [migaDePanCategorias]="categorias"></app-bread-crumb>
+<!-- <app-bread-crumb [migaDePanCategorias]="categorias"></app-bread-crumb> -->
 <div *ngIf="productos" class="ml-container">
     <div *ngFor="let producto of productos" class="ml-item-card clearfix">
         <a [routerLink]="['/items', producto.id]" routerLinkActive="active">
