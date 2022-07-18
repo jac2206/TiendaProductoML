@@ -40,6 +40,9 @@ export class ListaProductosComponent implements OnInit {
       next: (listaProductos) => {
         this.categorias = listaProductos.categories
         this.productos = listaProductos.items;
+        this.apiProductos.detallesEnCategorias.emit({
+          categorias: this.categorias
+        })
       },
       error:(err) => {
         alert(this.mensajesHttp.ErrorConsularListaProductos(err));
