@@ -62,6 +62,9 @@ http://localhost:3000/api-docs
 
 http://tiendaproductosmlapi.azurewebsites.net/api-docs
 
+## Analisis código estático sonar cloud
+![image](https://user-images.githubusercontent.com/66278236/179624204-2bece24a-1c65-4e37-b523-ddaaaa373128.png)
+
 ## URL Front end producción (https://thankful-beach-0d6a94810.1.azurestaticapps.net)
 
 ## URL Back end producción (http://tiendaproductosmlapi.azurewebsites.net/)
