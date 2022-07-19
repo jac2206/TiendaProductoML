@@ -25,18 +25,22 @@ export class DetalleProductosComponent implements OnInit, OnDestroy {
   ) { }
 
   ngOnInit(): void {
-    this.routeSuscription = this.route.params
-      .pipe(
-        filter((params: Params) => params['id']),
-        map((params: Params) => params['id'])
-      )
-      .subscribe((id: string) => {
-        this.ConsultarDetalleProduto(id)
-      });
+   this.ObtenerPathParamIdProducto();
   }
 
   ngOnDestroy(): void {
     this.routeSuscription?.unsubscribe()
+  }
+
+  ObtenerPathParamIdProducto(){
+    this.routeSuscription = this.route.params
+    .pipe(
+      filter((params: Params) => params['id']),
+      map((params: Params) => params['id'])
+    )
+    .subscribe((id: string) => {
+      this.ConsultarDetalleProduto(id)
+    });
   }
 
   ConsultarDetalleProduto(id: string) {

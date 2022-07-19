@@ -27,16 +27,20 @@ export class ListaProductosComponent implements OnInit, OnDestroy {
   ) { }
 
   ngOnInit(): void {
-    this.routeSuscription = this.route.queryParams.pipe(
-        filter((params: Params) => params['search']),
-        map((params: Params) => params['search'])
-    ).subscribe(search => {
-        this.search = search;
-        this.ConsultarListaProductos(this.search)
-    });
+    this.ObtenerQueryParamsBuscador();
   }
   ngOnDestroy() {
     this.routeSuscription?.unsubscribe();
+  }
+
+  ObtenerQueryParamsBuscador(){
+    this.routeSuscription = this.route.queryParams.pipe(
+      filter((params: Params) => params['search']),
+      map((params: Params) => params['search'])
+  ).subscribe(search => {
+      this.search = search;
+      this.ConsultarListaProductos(this.search)
+  });
   }
 
   ConsultarListaProductos(search: string){

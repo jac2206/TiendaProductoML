@@ -20,13 +20,17 @@ export class BreadCrumbComponent implements OnInit, OnDestroy {
   ) { }
 
   ngOnInit(): void {
-    this.apiProductos.detallesEnCategorias.subscribe((categorias: any) => {
-      this.migaDePanCategorias = categorias.categorias;
-    })
+    this.ObtenerCategorias();
   }
 
   ngOnDestroy() {
     this.apiProductos.detallesEnCategorias.unsubscribe();
+  }
+
+  ObtenerCategorias(){
+    this.apiProductos.detallesEnCategorias.subscribe((categorias: any) => {
+      this.migaDePanCategorias = categorias.categorias;
+    })
   }
 
 }
