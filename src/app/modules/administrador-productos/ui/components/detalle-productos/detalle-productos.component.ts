@@ -1,7 +1,7 @@
 import { HttpErrorResponse } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
-import { filter, map, of } from 'rxjs';
+import { filter, map, of, Subscription } from 'rxjs';
 import { ItemsDTO } from 'src/app/shared/common/entidades/items-dto';
 import { MensajeRespuestaEstadohttp } from 'src/app/shared/common/util/mensajerespuestaestadohttp';
 import { ProductosServiceService } from '../../../infraestructura/productos-service.service';
@@ -11,10 +11,11 @@ import { ProductosServiceService } from '../../../infraestructura/productos-serv
   templateUrl: './detalle-productos.component.html',
   styleUrls: ['./detalle-productos.component.scss']
 })
-export class DetalleProductosComponent implements OnInit {
+export class DetalleProductosComponent implements OnInit, OnDestroy {
 
   categorias: string[] = [];
   producto: ItemsDTO | undefined;
+  public routeSuscription?: Subscription;
 
   constructor(
     private route: ActivatedRoute,
@@ -24,7 +25,7 @@ export class DetalleProductosComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.route.params
+    this.routeSuscription = this.route.params
       .pipe(
         filter((params: Params) => params['id']),
         map((params: Params) => params['id'])
@@ -32,6 +33,10 @@ export class DetalleProductosComponent implements OnInit {
       .subscribe((id: string) => {
         this.ConsultarDetalleProduto(id)
       });
+  }
+
+  ngOnDestroy(): void {
+    this.routeSuscription?.unsubscribe()
   }
 
   ConsultarDetalleProduto(id: string) {

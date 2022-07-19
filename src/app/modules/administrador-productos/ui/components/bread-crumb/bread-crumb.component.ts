@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { ProductosServiceService } from '../../../infraestructura/productos-service.service';
 
 @Component({
@@ -6,7 +6,7 @@ import { ProductosServiceService } from '../../../infraestructura/productos-serv
   templateUrl: './bread-crumb.component.html',
   styleUrls: ['./bread-crumb.component.scss']
 })
-export class BreadCrumbComponent implements OnInit {
+export class BreadCrumbComponent implements OnInit, OnDestroy {
 
   @Input()
   migaDePanCategorias: string[] = [];
@@ -24,4 +24,9 @@ export class BreadCrumbComponent implements OnInit {
       this.migaDePanCategorias = categorias.categorias;
     })
   }
+
+  ngOnDestroy() {
+    this.apiProductos.detallesEnCategorias.unsubscribe();
+  }
+
 }

@@ -1,7 +1,7 @@
 import { HttpErrorResponse } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
-import { filter, map } from 'rxjs';
+import { filter, map, Subscription } from 'rxjs';
 import { ItemsDTO } from 'src/app/shared/common/entidades/items-dto';
 import { ProductosServiceService } from '../../../infraestructura/productos-service.service';
 import { Statushttp } from 'src/app/shared/common/enum/statushttp';
@@ -12,11 +12,12 @@ import { MensajeRespuestaEstadohttp } from 'src/app/shared/common/util/mensajere
   templateUrl: './lista-productos.component.html',
   styleUrls: ['./lista-productos.component.scss']
 })
-export class ListaProductosComponent implements OnInit {
+export class ListaProductosComponent implements OnInit, OnDestroy {
 
   search: string = "";
   public categorias: string[] = [];
   public productos: ItemsDTO[] = [];
+  public routeSuscription?: Subscription;
 
   constructor(
     private route: ActivatedRoute,
@@ -26,13 +27,16 @@ export class ListaProductosComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.route.queryParams.pipe(
+    this.routeSuscription = this.route.queryParams.pipe(
         filter((params: Params) => params['search']),
         map((params: Params) => params['search'])
     ).subscribe(search => {
         this.search = search;
         this.ConsultarListaProductos(this.search)
     });
+  }
+  ngOnDestroy() {
+    this.routeSuscription?.unsubscribe();
   }
 
   ConsultarListaProductos(search: string){
