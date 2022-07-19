@@ -1,10 +1,8 @@
-import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { filter, map, Subscription } from 'rxjs';
 import { ItemsDTO } from 'src/app/shared/common/entidades/items-dto';
 import { ProductosServiceService } from '../../../infraestructura/productos-service.service';
-import { Statushttp } from 'src/app/shared/common/enum/statushttp';
 import { MensajeRespuestaEstadohttp } from 'src/app/shared/common/util/mensajerespuestaestadohttp';
 
 @Component({

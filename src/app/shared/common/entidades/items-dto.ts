@@ -10,5 +10,5 @@ export interface ItemsDTO {
   free_shipping: boolean;
   location: UbicacionDTO;
   sold_quantity: number;
-  description: String;
+  description: string;
 }

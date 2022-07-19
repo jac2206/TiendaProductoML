@@ -1,7 +1,6 @@
-import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
-import { filter, map, of, Subscription } from 'rxjs';
+import { filter, map, Subscription } from 'rxjs';
 import { ItemsDTO } from 'src/app/shared/common/entidades/items-dto';
 import { MensajeRespuestaEstadohttp } from 'src/app/shared/common/util/mensajerespuestaestadohttp';
 import { ProductosServiceService } from '../../../infraestructura/productos-service.service';
