@@ -10,6 +10,7 @@ import { BreadCrumbComponent } from './ui/components/bread-crumb/bread-crumb.com
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { ProductosServiceService } from './infraestructura/productos-service.service';
 
 
 
@@ -27,6 +28,7 @@ import { HttpClientModule } from '@angular/common/http';
     // BrowserModule,
     FormsModule,
     HttpClientModule
-  ]
+  ],
+  providers: [ProductosServiceService]
 })
 export class AdministradorProductosModule { }
